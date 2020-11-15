@@ -32,10 +32,10 @@ public class ClasseMetodos {
 				IniciarVenda(lista);
 				break;
 			case 2:
-				ConsultaCat();
+				ConsultaCat();// acho que não precis na opção acima já fz isso
 				break;
 			case 3:
-				DefinirCatalogo();
+				DefinirCatalogo(); // não sei o que você quer fazer aqui
 				break;
 
 			case 9:
@@ -78,7 +78,7 @@ public class ClasseMetodos {
 
 	private CarrinhoCompras[] catalogoFrutasPronto(CarrinhoCompras[] lista) {
 		ClasseCarrinho carrinho = new ClasseCarrinho();
-		int opc = -1;
+		int opc = -1; //coloquei -1, pq o 9 e o 0 estão sendo usado
 		int i = 0;
 		while(opc != 0) {
 			opc = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a fruta e a sua quantidade ou 0 para terminar"
@@ -94,7 +94,7 @@ public class ClasseMetodos {
 					+ "\n 10 - Limão: valor = R$ 3.49 Kg"));
 				switch (opc) {
 				case 1:case 2:case 3:case 4:case 5:case 6:case 7:case 8:case 9:case 10:
-					lista = carrinho.SomarValores(lista, opc, i);
+					lista = carrinho.SomarValoresFrutas(lista, opc, i);
 					break;
 				case 0:
 					JOptionPane.showMessageDialog(null, "Finalizando carrinho");
@@ -132,7 +132,36 @@ public class ClasseMetodos {
 	}
 
 	private CarrinhoCompras[] CatalogoLeguVerPronto(CarrinhoCompras[] lista) {
-
+//Fazer parecido com as opções das frutas instancia mais uma Classe carrinhos
+		
+		ClasseCarrinho carrinho = new ClasseCarrinho();
+		int opc = -1; //coloquei -1, pq o 9 e o 0 estão sendo usado
+		int i = 0;
+		while(opc != 0) {
+			opc = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a fruta e a sua quantidade ou 0 para terminar"
+					+ "\n 1 - Banana: valor = R$ 3.99 Kg"
+					+ "\n 2 - Maça: valor: R$ 0.50 a unidade"
+					+ "\n 3 - Laranja: valor = R$ 4.00 Kg "
+					+ "\n 4 - Abacaxi: valor = R$ 5.00 Kg"
+					+ "\n 5 - Mamão: valor = R$ 2.00 Unidade"
+					+ "\n 6 - Morango: valor = R$ 5.00 Caixa"
+					+ "\n 7 - Melão: valor = R$ 6.00 unidade"
+					+ "\n 8 - Melância: valor = R$ 10.00 unidade"
+					+ "\n 9 - Manga: valor = R$ 2.00 unidade"
+					+ "\n 10 - Limão: valor = R$ 3.49 Kg"));
+				switch (opc) {
+				case 1:case 2:case 3:case 4:case 5:case 6:case 7:case 8:case 9:case 10:
+					lista = carrinho.SomarValoresverLeg(lista, opc, i);
+					break;
+				case 0:
+					JOptionPane.showMessageDialog(null, "Finalizando carrinho");
+					break;
+				default:
+					JOptionPane.showMessageDialog(null, "Opção invalida");
+				}
+				i ++;
+		}
+		
 //		compra[0].nome = "Alface Crespa";
 //		compra[0].preco = 4.99;
 //		compra[1].nome = "Alface Americana";
