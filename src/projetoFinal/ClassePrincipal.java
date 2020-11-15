@@ -7,14 +7,17 @@ public class ClassePrincipal {
 	public static void main(String args[]) {
 
 		ClasseMetodos cm = new ClasseMetodos();
-		Cliente[] cadasCliente = new Cliente[10];
-		CarrinhoCompras[] lista = new CarrinhoCompras[20];
+		Cliente[] cadasCliente = new Cliente[10]; //BD com no máximo 10 clientes.
+		CarrinhoCompras[] lista = new CarrinhoCompras[20]; //O maximo do pedido é 20?
 		
 
 		for (int i = 0; i < cadasCliente.length; i++) {
-			cadasCliente[i] = new Cliente();
-			lista[i] = new CarrinhoCompras();
+                    cadasCliente[i] = new Cliente();
 		}
+                for (int i = 0; i<lista.length; i++)
+                {
+                    lista[i] = new CarrinhoCompras();
+                }
 
 		int opc = 0;
 		while (opc != 9) {
