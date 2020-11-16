@@ -1,33 +1,6 @@
 package projetoFinal;
 
-//class Produtos {
-//	String nome;
-//	double preco;
-//
-//	Produtos() {
-//		this(" ", 0);
-//	}
-//
-//	Produtos(String nomeFruta, double precoFruta) {
-//		nome = nomeFruta;
-//		preco = precoFruta;
-//	}
-//}
-//
-//class LeguVer // Legumes e verduras
-//{
-//	String nome;
-//	double preco;
-//
-//	LeguVer() {
-//		this(" ", 0);
-//	}
-//
-//	LeguVer(String nomeLegume, double precoLegume) {
-//		nome = nomeLegume;
-//		preco = precoLegume;
-//	}
-//}
+
 class Cliente {
 	String nome;
 	String endereco;

@@ -26,14 +26,14 @@ public class ClasseMetodos {
 
 		int opc = 0;
 		while (opc != 9) {
-			opc = Integer.parseInt(JOptionPane.showInputDialog(null, " 1 - Iniciar Carrinho ; \n 2 - Consultar produtos do catálogo"
+			opc = Integer.parseInt(JOptionPane.showInputDialog(null, " 1 - Iniciar Carrinho ; \n 2 - Consultar total da compra"
 					+ " \n 3 - Cadastrar produto no catálogo. \n 9 - Finalizar"));
 			switch (opc) {
 			case 1:
-				IniciarVenda(lista);
+				lista = IniciarVenda(lista);
 				break;
 			case 2:
-				ConsultaCat();// acho que não precis na opção acima já fz isso //realmente não precisa.
+				lista = somaParcial(lista);// acho que não precis na opção acima já fz isso //realmente não precisa.
 				break;
 			case 3:
 				DefinirCatalogo(); // Seria uma opção para alterar o catálogo
@@ -145,17 +145,20 @@ public class ClasseMetodos {
 		return lista;
 	}
 
-	private void somaParcial(CarrinhoCompras[] lista) {
+	private CarrinhoCompras[] somaParcial(CarrinhoCompras[] lista) {
 		
-            double contador = 0;
-            DecimalFormat fmt = new DecimalFormat();
-            fmt.applyPattern("R$ #,##0.00");
-            
-            for (int i = 0; i<20; i++)
-            {
-                contador = contador + lista[i].total;
-            }
-            System.out.println("Total: " +fmt.format(contador));
+	    double contador = 0;
+        DecimalFormat fmt = new DecimalFormat();
+        fmt.applyPattern("R$ #,##0.00");
+        
+        for (int i = 0; i<20; i++)
+        {
+            contador = contador + lista[i].total;
+        	lista[i].totalItens += lista[i].total;
+        }
+        System.out.println("Total: " +fmt.format(contador));
+        
+		return lista;
 
 	}
 

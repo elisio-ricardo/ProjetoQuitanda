@@ -181,7 +181,7 @@ public class ClasseCarrinho {
                                 System.out.println("Descrição: " + lista[i].fruta + " Quantidade : " + lista[i].quantidade + " // Valor unitário: " + fmt.format(lista[i].preco) + " // Valor total: " +fmt.format(lista[i].total));
 				break;
 			case 10:
-                                i=20;
+                                i=19;
 				lista[i].fruta = "Repolho";
 				lista[i].preco = 4.50;
 				lista[i].quantidade = (lista[i].quantidade+Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a quantidade: ")));
