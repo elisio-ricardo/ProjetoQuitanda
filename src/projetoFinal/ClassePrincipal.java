@@ -1,10 +1,12 @@
 package projetoFinal;
 
+import java.io.IOException;
+
 import javax.swing.JOptionPane;
 
 public class ClassePrincipal {
 
-	public static void main(String args[]) {
+	public static void main(String args[]) throws IOException {
 
 		ClasseMetodos cm = new ClasseMetodos();
 		Cliente[] cadasCliente = new Cliente[10]; //BD com no máximo 10 clientes.
@@ -31,7 +33,7 @@ public class ClassePrincipal {
 				cadasCliente = cm.CadastrarCliente(cadasCliente);
 				break;
 			case 2:
-				 lista = cm.RealizarVenda(lista);
+				 lista = cm.RealizarVenda(lista, cadasCliente);
 				break;
 			case 9:
 				JOptionPane.showMessageDialog(null, "Obrigado por utilizar a aplicação", "Entrada de dados",

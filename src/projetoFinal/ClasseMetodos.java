@@ -1,5 +1,13 @@
 package projetoFinal;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
@@ -22,21 +30,23 @@ public class ClasseMetodos {
 		return cadasCliente;
 	}
 
-	public CarrinhoCompras[] RealizarVenda(CarrinhoCompras[] lista) {
-
+	public CarrinhoCompras[] RealizarVenda(CarrinhoCompras[] lista, Cliente[] cadasCliente) throws IOException {
+		double total = 0;
 		int opc = 0;
 		while (opc != 9) {
 			opc = Integer.parseInt(JOptionPane.showInputDialog(null, " 1 - Iniciar Carrinho ; \n 2 - Consultar total da compra"
-					+ " \n 3 - Cadastrar produto no catálogo. \n 9 - Finalizar"));
+					+ " \n 3 - Gerar Nota fiscal. \n 9 - Finalizar"));
 			switch (opc) {
 			case 1:
 				lista = IniciarVenda(lista);
 				break;
 			case 2:
-				lista = somaParcial(lista);// acho que não precis na opção acima já fz isso //realmente não precisa.
+				total = somaParcial(lista);//atualizei para a soma parcial
+				JOptionPane.showMessageDialog(null, "O Total da compra é R$ " + total);
 				break;
 			case 3:
-				DefinirCatalogo(); // Seria uma opção para alterar o catálogo
+				total = somaParcial(lista);
+				GerarNotaFiscal(lista, total, cadasCliente); // Inseri todos os dados de vendas em um arquivo.txt para poder imprimir e entregar para o cliente
 				break;
 
 			case 9:
@@ -82,7 +92,7 @@ public class ClasseMetodos {
 		int opc = -1; //coloquei -1, pq o 9 e o 0 estão sendo usado
 		int i = 0;
 		while(opc != 0) {
-			opc = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a fruta e na próxima janela sua quantidade, ou digite 0 para terminar."
+			opc = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a fruta e na próxima janela sua quantidade ou digite 0 para terminar."
 					+ "\n 1 - Banana: valor = R$ 3.99 Kg"
 					+ "\n 2 - Maça: valor: R$ 0.50 a unidade"
 					+ "\n 3 - Laranja: valor = R$ 4.00 Kg "
@@ -145,7 +155,7 @@ public class ClasseMetodos {
 		return lista;
 	}
 
-	private CarrinhoCompras[] somaParcial(CarrinhoCompras[] lista) {
+	private double somaParcial(CarrinhoCompras[] lista) {
 		
 	    double contador = 0;
         DecimalFormat fmt = new DecimalFormat();
@@ -154,22 +164,94 @@ public class ClasseMetodos {
         for (int i = 0; i<20; i++)
         {
             contador = contador + lista[i].total;
-        	lista[i].totalItens += lista[i].total;
         }
         System.out.println("Total: " +fmt.format(contador));
         
-		return lista;
+		return contador;
 
 	}
 
-	private void DefinirCatalogo() {
-		// TODO Auto-generated method stub
+	private void GerarNotaFiscal(CarrinhoCompras[] lista, double total, Cliente[] cadasCliente) throws IOException {
 
+		File dir = new File("C:\\TEMP\\NotaFiscal");
+		File arq = new File(dir, "NotaFiscal.txt");
+		if(dir.exists() && dir.isDirectory()) {
+			System.out.println("Nota fiscal Pronta");
+		}else {
+			dir.mkdir();
+			System.out.println("Nota Fiscal Pronta");
+		}
+		
+		String conteudo = preencheNota(lista, total,cadasCliente);
+		FileWriter fileWriter = new FileWriter(arq);
+		PrintWriter print = new PrintWriter(fileWriter);
+		print.write(conteudo);
+		print.flush();
+		print.close();
+		fileWriter.close();
+		
 	}
         
-        private void ConsultaCat()
-        {
-            
-        }
+        private String preencheNota(CarrinhoCompras[] lista, double total, Cliente[] cadasCliente) throws IOException {
+        StringBuffer buffer = new StringBuffer();
+        String fileName = "NotaFiscal.txt";
+        BufferedWriter gravar = new BufferedWriter(new FileWriter(fileName));
+        String linha = "";
+        linha = ("Foi um Prazer Ter você como nosso Cliente");
+        buffer.append(linha + "\n\r");
+        gravar.write(linha );
+		gravar.newLine();
+        linha = ("Cliente: " + cadasCliente[0].nome +"    Endereço: " + cadasCliente[0].endereco);
+        buffer.append(linha + "\n\r");
+        gravar.write(linha );
+		gravar.newLine();
+        for (int i = 0; i < lista.length; i++) {
+        	if(lista[i].fruta != null) {
+        		linha =  (lista[i].fruta+ " - Quantidade:" + lista[i].quantidade + " - Valor unitario: R$ " + lista[i].preco+" - Total: R$" + lista[i].total);
+        		buffer.append(linha + "\n\r");
+        		 gravar.write(linha );
+        		 gravar.newLine();
+        	}
+			
+		}
+        DecimalFormat fmt = new DecimalFormat();
+        fmt.applyPattern("R$ #,##0.00");
+        
+        linha = ("Total da compra: " +fmt.format(total));
+		buffer.append(linha + "\n\r");
+		 gravar.write(linha );
+		 gravar.newLine();
+         gravar.close();
+        	
+		return buffer.toString();
+	}
+        
+        public boolean verificaRegistro(String arquivo, int codigo) throws IOException {
+    		File arq = new File("C:\\TEMP\\exercicio", arquivo);
+    		String cod = Integer.toString(codigo);
+    		boolean existe = false;
+    		if (arq.exists() && arq.isFile()) {
+    			FileInputStream fluxo = new FileInputStream(arq);
+    			InputStreamReader leitor = new InputStreamReader(fluxo);
+    			BufferedReader buffer = new BufferedReader(leitor);
+    			String linha = buffer.readLine();
+    			while (linha != null) {
+    				if (linha.contains(cod)) {
+    					existe = true;
+    				}
+    				linha = buffer.readLine();
+    			}
+
+    			buffer.close();
+    			fluxo.close();
+    			leitor.close();
+    		} else {
+    			throw new IOException("Diretorio Invalido");
+    		}
+    		return existe;
+
+    	}
+
+
 
 }

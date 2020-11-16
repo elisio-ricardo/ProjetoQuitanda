@@ -31,7 +31,6 @@ class CarrinhoCompras{
 		quantidade = quantidade;
 		preco = preco;
 		total = total;
-		totalItens = totalItens;
 	
 	}
 }
