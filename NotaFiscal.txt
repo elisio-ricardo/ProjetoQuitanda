@@ -1,6 +1,0 @@
-Foi um Prazer Ter você como nosso Cliente
-Cliente: ricardo    Endereço: vit
-Maça - Quantidade:7 - Valor unitario: R$ 0.5 - Total: R$3.5
-Mamão - Quantidade:6 - Valor unitario: R$ 2.0 - Total: R$12.0
-Melão - Quantidade:8 - Valor unitario: R$ 6.0 - Total: R$48.0
-Total da compra: R$ 63,50

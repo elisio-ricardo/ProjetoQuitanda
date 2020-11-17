@@ -15,6 +15,8 @@ public class ClassePrincipal {
 
 		for (int i = 0; i < cadasCliente.length; i++) {
                     cadasCliente[i] = new Cliente();
+                    cadasCliente[i].nome = "Não Preenchido";
+                    cadasCliente[i].endereco = "Não Preenchido";
 		}
                 for (int i = 0; i<lista.length; i++)
                 {
