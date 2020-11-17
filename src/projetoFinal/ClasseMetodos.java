@@ -37,28 +37,30 @@ public class ClasseMetodos {
 		return cadasCliente;
 	}
 
-	public CarrinhoCompras[] RealizarVenda(CarrinhoCompras[] lista, Cliente[] cadasCliente) throws IOException, InterruptedException{
+	public CarrinhoCompras[] RealizarVenda(CarrinhoCompras[] lista, Cliente[] cadasCliente)
+			throws IOException, InterruptedException {
 		double total = 0;
 		int opc = 0;
 		while (opc != 9) {
-			opc = Integer.parseInt(JOptionPane.showInputDialog(null, " 1 - Iniciar Carrinho ; \n 2 - Consultar total da compra"
-					+ " \n 3 - Escolher Forma de pagamento \n 4 - Gerar Nota fiscal. \n\n 9 - Finalizar"));
+			opc = Integer.parseInt(
+					JOptionPane.showInputDialog(null, " 1 - Iniciar Carrinho ; \n 2 - Consultar total da compra"
+							+ " \n 3 - Escolher Forma de pagamento \n 4 - Gerar Nota fiscal. \n\n 9 - Finalizar"));
 			switch (opc) {
 			case 1:
 				lista = IniciarVenda(lista);
-                                total = somaParcial(lista);
+				total = somaParcial(lista);
 				break;
 			case 2:
-				total = somaParcial(lista);//atualizei para a soma parcial
+				total = somaParcial(lista);// atualizei para a soma parcial
 				JOptionPane.showMessageDialog(null, "O Total da compra é R$ " + total);
 				break;
-                        case 3:
-                                total = escolhaPagamento(total);
-                                break;
-			case 4:
-				GerarNotaFiscal(lista, total, cadasCliente); // Inseri todos os dados de vendas em um arquivo.txt para poder imprimir e entregar para o cliente
+			case 3:
+				total = escolhaPagamento(total);
 				break;
-
+			case 4:
+				GerarNotaFiscal(lista, total, cadasCliente); // Inseri todos os dados de vendas em um arquivo.txt para
+																// poder imprimir e entregar para o cliente
+				break;
 			case 9:
 				JOptionPane.showMessageDialog(null, "Obrigado por utilizar");
 				break;
@@ -182,8 +184,6 @@ public class ClasseMetodos {
 		return contador;
 
 	}
-        
-        
         // TO DO
         private double escolhaPagamento(double total) throws InterruptedException
         {
