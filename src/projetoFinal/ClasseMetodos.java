@@ -178,7 +178,7 @@ public class ClasseMetodos {
 		if(dir.exists() && dir.isDirectory()) {
 			System.out.println("Nota fiscal Pronta");
 		}else {
-			dir.mkdir(); //cria uma pastase não existir
+			dir.mkdirs(); //cria uma pastase não existir, alterei mkdir para mkdirs
 			System.out.println("Nota Fiscal Pronta");
 		}
 		
