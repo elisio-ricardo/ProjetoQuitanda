@@ -172,13 +172,13 @@ public class ClasseMetodos {
 	}
 
 	private void GerarNotaFiscal(CarrinhoCompras[] lista, double total, Cliente[] cadasCliente) throws IOException {
-
+//Cria nota fiscal em um arquivo que abre no bloco de notas no diretorio C:\\TEMP\\NotaFiscal se não ouver uma pasta dessas ele vai criar autmaticamente
 		File dir = new File("C:\\TEMP\\NotaFiscal");
 		File arq = new File(dir, "NotaFiscal.txt");
 		if(dir.exists() && dir.isDirectory()) {
 			System.out.println("Nota fiscal Pronta");
 		}else {
-			dir.mkdir();
+			dir.mkdir(); //cria uma pastase não existir
 			System.out.println("Nota Fiscal Pronta");
 		}
 		
@@ -195,10 +195,10 @@ public class ClasseMetodos {
         private String preencheNota(CarrinhoCompras[] lista, double total, Cliente[] cadasCliente) throws IOException {
         StringBuffer buffer = new StringBuffer();
         String fileName = "NotaFiscal.txt";
-        BufferedWriter gravar = new BufferedWriter(new FileWriter(fileName));
+        BufferedWriter gravar = new BufferedWriter(new FileWriter(fileName)); //para gravar em um arquivo que aparece a direita da tela
         String linha = "";
         linha = ("Foi um Prazer Ter você como nosso Cliente");
-        buffer.append(linha + "\n\r");
+        buffer.append(linha + "\n\r"); //vai adicionar as informações  no arquivo.txt
         gravar.write(linha );
 		gravar.newLine();
         linha = ("Cliente: " + cadasCliente[0].nome +"    Endereço: " + cadasCliente[0].endereco);
@@ -206,7 +206,7 @@ public class ClasseMetodos {
         gravar.write(linha );
 		gravar.newLine();
         for (int i = 0; i < lista.length; i++) {
-        	if(lista[i].fruta != null) {
+        	if(lista[i].fruta != null) { //Para remover as posiçoes que não foram cadastrado frutas
         		linha =  (lista[i].fruta+ " - Quantidade:" + lista[i].quantidade + " - Valor unitario: R$ " + lista[i].preco+" - Total: R$" + lista[i].total);
         		buffer.append(linha + "\n\r");
         		 gravar.write(linha );
@@ -226,32 +226,5 @@ public class ClasseMetodos {
 		return buffer.toString();
 	}
         
-        public boolean verificaRegistro(String arquivo, int codigo) throws IOException {
-    		File arq = new File("C:\\TEMP\\exercicio", arquivo);
-    		String cod = Integer.toString(codigo);
-    		boolean existe = false;
-    		if (arq.exists() && arq.isFile()) {
-    			FileInputStream fluxo = new FileInputStream(arq);
-    			InputStreamReader leitor = new InputStreamReader(fluxo);
-    			BufferedReader buffer = new BufferedReader(leitor);
-    			String linha = buffer.readLine();
-    			while (linha != null) {
-    				if (linha.contains(cod)) {
-    					existe = true;
-    				}
-    				linha = buffer.readLine();
-    			}
-
-    			buffer.close();
-    			fluxo.close();
-    			leitor.close();
-    		} else {
-    			throw new IOException("Diretorio Invalido");
-    		}
-    		return existe;
-
-    	}
-
-
 
 }
