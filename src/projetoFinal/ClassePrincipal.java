@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
 
 public class ClassePrincipal {
 
-	public static void main(String args[]) throws IOException {
+	public static void main(String args[]) throws IOException, InterruptedException {
 
 		ClasseMetodos cm = new ClasseMetodos();
 		Cliente[] cadasCliente = new Cliente[10]; //BD com no máximo 10 clientes.
@@ -26,7 +26,7 @@ public class ClassePrincipal {
 		int opc = 0;
 		while (opc != 9) {
 			opc = Integer.parseInt(JOptionPane.showInputDialog(null,
-					"Bem vindo ao sistema da quitanda \n Selecione uma das seguintes opções:"
+					"Bem vindo ao sistema da quitanda \n\nSelecione uma das seguintes opções:\n"
 							+ " \n 1 - Para cadastrar cliente; \n 2 - Para realizar Compra \n 9 - Finalizar aplicação",
 					"Entrada de dados", JOptionPane.INFORMATION_MESSAGE));
 
