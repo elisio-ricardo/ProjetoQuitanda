@@ -10,7 +10,7 @@ public class ClassePrincipal {
 
 		ClasseMetodos cm = new ClasseMetodos();
 		Cliente[] cadasCliente = new Cliente[10]; //BD com no máximo 10 clientes.
-		CarrinhoCompras[] lista = new CarrinhoCompras[20]; //O maximo do pedido é 20?
+		CarrinhoCompras[] lista = new CarrinhoCompras[20]; //O maximo do pedido é 20? 
 		
 
 		for (int i = 0; i < cadasCliente.length; i++) {
