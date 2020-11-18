@@ -1,0 +1,4 @@
+Foi um Prazer Ter você como nosso Cliente
+Cliente: Não Preenchido    Endereço: Não Preenchido
+Banana - Quantidade:5 - Valor unitario:  R$ 3,99 - Total: R$ 19,95
+Total da compra: R$ 19,95 // Desconto: R$ 1,00 // Valor Pago: R$ 18,95
