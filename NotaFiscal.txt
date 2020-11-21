@@ -1,4 +1,7 @@
 Foi um Prazer Ter você como nosso Cliente
 Cliente: Não Preenchido    Endereço: Não Preenchido
-Banana - Quantidade:5 - Valor unitario:  R$ 3,99 - Total: R$ 19,95
-Total da compra: R$ 19,95 // Desconto: R$ 1,00 // Valor Pago: R$ 18,95
+Banana - Quantidade:1.0 - Valor unitario:  R$ 3,99 - Total: R$ 3,99
+Maça - Quantidade:0.5 - Valor unitario:  R$ 0,50 - Total: R$ 0,25
+Alface Crespa - Quantidade:0.5 - Valor unitario:  R$ 4,99 - Total: R$ 2,50
+Alface Americana - Quantidade:3.5 - Valor unitario:  R$ 5,99 - Total: R$ 20,96
+Total da compra: R$ 27,70

@@ -17,7 +17,7 @@ class Cliente {
 
 class CarrinhoCompras{
 	String fruta;
-	int quantidade;
+	double quantidade;
 	double preco;
 	double total;
 	int totalItens;
