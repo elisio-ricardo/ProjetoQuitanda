@@ -51,7 +51,7 @@ public class ClasseCarrinho {
 				if (lista[i].quantidade == 0) {
 					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
 					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Digite um valor maior que a zero");
+						JOptionPane.showMessageDialog(null, "Digite um valor maior que zero");
 					} else {
 						lista[i].quantidade = quantidade;
 					}
@@ -79,7 +79,7 @@ public class ClasseCarrinho {
 				if (lista[i].quantidade == 0) {
 					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
 					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Digite um valor maior que a zero");
+						JOptionPane.showMessageDialog(null, "Digite um valor maior que zero");
 					} else {
 						lista[i].quantidade = quantidade;
 					}
@@ -108,7 +108,7 @@ public class ClasseCarrinho {
 				if (lista[i].quantidade == 0) {
 					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
 					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Digite um valor maior que a zero");
+						JOptionPane.showMessageDialog(null, "Digite um valor maior que zero");
 					} else {
 						lista[i].quantidade = quantidade;
 					}
@@ -136,7 +136,7 @@ public class ClasseCarrinho {
 				if (lista[i].quantidade == 0) {
 					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
 					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Digite um valor maior que a zero");
+						JOptionPane.showMessageDialog(null, "Digite um valor maior que zero");
 					} else {
 						lista[i].quantidade = quantidade;
 					}
@@ -163,7 +163,7 @@ public class ClasseCarrinho {
 				if (lista[i].quantidade == 0) {
 					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
 					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Digite um valor maior que a zero");
+						JOptionPane.showMessageDialog(null, "Digite um valor maior que zero");
 					} else {
 						lista[i].quantidade = quantidade;
 					}
@@ -191,7 +191,7 @@ public class ClasseCarrinho {
 				if (lista[i].quantidade == 0) {
 					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
 					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Digite um valor maior que a zero");
+						JOptionPane.showMessageDialog(null, "Digite um valor maior que zero");
 					} else {
 						lista[i].quantidade = quantidade;
 					}
@@ -219,7 +219,7 @@ public class ClasseCarrinho {
 				if (lista[i].quantidade == 0) {
 					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
 					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Digite um valor maior que a zero");
+						JOptionPane.showMessageDialog(null, "Digite um valor maior que zero");
 					} else {
 						lista[i].quantidade = quantidade;
 					}
@@ -247,7 +247,7 @@ public class ClasseCarrinho {
 				if (lista[i].quantidade == 0) {
 					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
 					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Digite um valor maior que a zero");
+						JOptionPane.showMessageDialog(null, "Digite um valor maior que zero");
 					} else {
 						lista[i].quantidade = quantidade;
 					}
@@ -275,7 +275,7 @@ public class ClasseCarrinho {
 				if (lista[i].quantidade == 0) {
 					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
 					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Digite um valor maior que a zero");
+						JOptionPane.showMessageDialog(null, "Digite um valor maior que zero");
 					} else {
 						lista[i].quantidade = quantidade;
 					}
@@ -322,7 +322,7 @@ public class ClasseCarrinho {
 				if (lista[i].quantidade == 0) {
 					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
 					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Digite um valor maior que a zero");
+						JOptionPane.showMessageDialog(null, "Digite um valor maior que zero");
 					} else {
 						lista[i].quantidade = quantidade;
 					}
@@ -350,7 +350,7 @@ public class ClasseCarrinho {
 				if (lista[i].quantidade == 0) {
 					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
 					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Digite um valor maior que a zero");
+						JOptionPane.showMessageDialog(null, "Digite um valor maior que zero");
 					} else {
 						lista[i].quantidade = quantidade;
 					}
@@ -378,7 +378,7 @@ public class ClasseCarrinho {
 				if (lista[i].quantidade == 0) {
 					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
 					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Digite um valor maior que a zero");
+						JOptionPane.showMessageDialog(null, "Digite um valor maior que zero");
 					} else {
 						lista[i].quantidade = quantidade;
 					}
@@ -406,7 +406,7 @@ public class ClasseCarrinho {
 				if (lista[i].quantidade == 0) {
 					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
 					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Digite um valor maior que a zero");
+						JOptionPane.showMessageDialog(null, "Digite um valor maior que zero");
 					} else {
 						lista[i].quantidade = quantidade;
 					}
@@ -434,7 +434,7 @@ public class ClasseCarrinho {
 				if (lista[i].quantidade == 0) {
 					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
 					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Digite um valor maior que a zero");
+						JOptionPane.showMessageDialog(null, "Digite um valor maior que zero");
 					} else {
 						lista[i].quantidade = quantidade;
 					}
@@ -462,7 +462,7 @@ public class ClasseCarrinho {
 				if (lista[i].quantidade == 0) {
 					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
 					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Digite um valor maior que a zero");
+						JOptionPane.showMessageDialog(null, "Digite um valor maior que zero");
 					} else {
 						lista[i].quantidade = quantidade;
 					}
@@ -490,7 +490,7 @@ public class ClasseCarrinho {
 				if (lista[i].quantidade == 0) {
 					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
 					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Digite um valor maior que a zero");
+						JOptionPane.showMessageDialog(null, "Digite um valor maior que zero");
 					} else {
 						lista[i].quantidade = quantidade;
 					}
@@ -518,7 +518,7 @@ public class ClasseCarrinho {
 				if (lista[i].quantidade == 0) {
 					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
 					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Digite um valor maior que a zero");
+						JOptionPane.showMessageDialog(null, "Digite um valor maior que zero");
 					} else {
 						lista[i].quantidade = quantidade;
 					}
@@ -546,7 +546,7 @@ public class ClasseCarrinho {
 				if (lista[i].quantidade == 0) {
 					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
 					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Digite um valor maior que a zero");
+						JOptionPane.showMessageDialog(null, "Digite um valor maior que zero");
 					} else {
 						lista[i].quantidade = quantidade;
 					}
@@ -574,7 +574,7 @@ public class ClasseCarrinho {
 				if (lista[i].quantidade == 0) {
 					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
 					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Digite um valor maior que a zero");
+						JOptionPane.showMessageDialog(null, "Digite um valor maior que zero");
 					} else {
 						lista[i].quantidade = quantidade;
 					}
