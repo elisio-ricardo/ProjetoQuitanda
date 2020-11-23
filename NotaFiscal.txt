@@ -1,7 +1,4 @@
 Foi um Prazer Ter você como nosso Cliente
-Cliente: Não Preenchido    Endereço: Não Preenchido
-Banana - Quantidade:1.0 - Valor unitario:  R$ 3,99 - Total: R$ 3,99
-Maça - Quantidade:0.5 - Valor unitario:  R$ 0,50 - Total: R$ 0,25
-Alface Crespa - Quantidade:0.5 - Valor unitario:  R$ 4,99 - Total: R$ 2,50
-Alface Americana - Quantidade:3.5 - Valor unitario:  R$ 5,99 - Total: R$ 20,96
-Total da compra: R$ 27,70
+Cliente: ricardo    Endereço: ddd
+Mandioquinha - Quantidade:20.0 - Valor unitario:  R$ 6,00 - Total: R$ 120,00
+Total da compra: R$ 120,00
