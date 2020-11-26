@@ -11,7 +11,7 @@ public class ClassePrincipal {
 
 		ClasseMetodos cm = new ClasseMetodos();
 		Cliente[] cadasCliente = new Cliente[10]; //BD com no máximo 10 clientes.
-		CarrinhoCompras[] lista = new CarrinhoCompras[20]; //O maximo do pedido é 20? 
+		CarrinhoCompras[] lista = new CarrinhoCompras[20]; //O maximo do pedido é 20 itens diferentes. 
 		
 
 		for (int i = 0; i < cadasCliente.length; i++) {
@@ -33,10 +33,10 @@ public class ClassePrincipal {
 
 			switch (opc) {
 			case 1:
-				cadasCliente = cm.CadastrarCliente(cadasCliente);
+				cadasCliente = cm.CadastrarCliente(cadasCliente); // Opção para chamar o cadastro de clientes.
 				break;
 			case 2:
-				 lista = cm.RealizarVenda(lista, cadasCliente);
+				 lista = cm.RealizarVenda(lista, cadasCliente); //Opção para realizar a venda.
 				break;
 			case 9:
 				JOptionPane.showMessageDialog(null, "Obrigado por utilizar a aplicação", "Entrada de dados",
