@@ -15,10 +15,10 @@ import javax.swing.JOptionPane;
 public class ClasseMetodos {
 
 	public Cliente[] CadastrarCliente(Cliente[] cadasCliente) {
-// o nome e endereço do cliente para inserir na nota final
+                // o nome e endereço do cliente para inserir na nota final
 		String parar = "";
 		int i = 0;
-		while (!parar.equalsIgnoreCase("sim")) {
+		while (!parar.equalsIgnoreCase("sim")) { // só irá parar de chamar o preenchimento do BD se colocarmos "sim"
 			cadasCliente[i].nome = JOptionPane.showInputDialog(null, "Digite o nome  do cliente: ", "Entrada de dados",
 					JOptionPane.INFORMATION_MESSAGE);
 			cadasCliente[i].endereco = JOptionPane.showInputDialog(null, "Digite o endereço do cliente: ",
@@ -37,8 +37,8 @@ public class ClasseMetodos {
 		return cadasCliente;
 	}
 
-	public CarrinhoCompras[] RealizarVenda(CarrinhoCompras[] lista, Cliente[] cadasCliente)
-			throws IOException, InterruptedException {
+	public CarrinhoCompras[] RealizarVenda(CarrinhoCompras[] lista, Cliente[] cadasCliente) 
+			throws IOException, InterruptedException { //Menu para realizar a venda.
 		double total = 0;
 
 		int opc = -1;
@@ -46,27 +46,27 @@ public class ClasseMetodos {
 			opc = Integer.parseInt(JOptionPane.showInputDialog(null, " 1 - Iniciar Carrinho ; \n 2 - Consultar total da compra"
 					+ " \n 3 - Escolher Forma de pagamento \n 4 - Gerar Nota fiscal. \n\n 0 - Voltar \n 9 - Finalizar Programa"));
 			switch (opc) {
-			case 1:
+			case 1: //Inicia o carrinho de compras
 				lista = IniciarVenda(lista);
 				total = somaParcial(lista);
 				break;
-			case 2:
+			case 2: //Mostra o total da compra no console
 				total = somaParcial(lista);// atualizei para a soma parcial
 				JOptionPane.showMessageDialog(null, "O Total da compra é R$ " + total);
 				break;
-			case 3:
+			case 3: //Abre o menu de pagamento
 				total = escolhaPagamento(total);
 				break;
-			case 4:
+			case 4: //Gera o arquivo físico com os dados da compra
 				GerarNotaFiscal(lista, total, cadasCliente); // Inseri todos os dados de vendas em um arquivo.txt para
 																// poder imprimir e entregar para o cliente
 				break;
 
-                        case 0 : ;
+                        case 0 : ; // Volta para o menu anterior
 				break;
 
-			case 9:	JOptionPane.showMessageDialog(null, "Obrigado por utilizar a aplicação");
-                            System.exit(0);
+			case 9:	JOptionPane.showMessageDialog(null, "Obrigado por utilizar a aplicação"); // Finaliza a aplicação
+                                System.exit(0);
 				break;
 			default:
 				JOptionPane.showMessageDialog(null, "Opção inválida");
@@ -75,7 +75,7 @@ public class ClasseMetodos {
 		return lista;
 	}
 
-	private CarrinhoCompras[] IniciarVenda(CarrinhoCompras[] lista) {
+	private CarrinhoCompras[] IniciarVenda(CarrinhoCompras[] lista) { //Inicia o menu de escolhas
 
 		int opc = 0;
 		while (opc != 9) {
@@ -83,13 +83,13 @@ public class ClasseMetodos {
 
 			switch (opc) {
 			case 1:
-				lista = catalogoFrutasPronto(lista);
+				lista = catalogoFrutasPronto(lista); //Abre o catalogo de frutas
 				break;
 			case 2:
-				lista = CatalogoLeguVerPronto(lista);
+				lista = CatalogoLeguVerPronto(lista); //Abre o catalogo de legumes e verduras
 				break;
 			case 9:
-				JOptionPane.showMessageDialog(null, "Finalizando Carrinho");
+				JOptionPane.showMessageDialog(null, "Finalizando Carrinho"); //"finaliza" o carrinho
 				break;
 			default:
 				JOptionPane.showMessageDialog(null, "Opção Invalida");
@@ -97,15 +97,11 @@ public class ClasseMetodos {
 			}
 		}
 		return lista;
-
-		// continuar chamando outro switch case com as opções frutas e verduras depois
-		// mostrar todas opções e ir chamando as funções para calculo.
-
 	}
 
-	private CarrinhoCompras[] catalogoFrutasPronto(CarrinhoCompras[] lista) {
+	private CarrinhoCompras[] catalogoFrutasPronto(CarrinhoCompras[] lista) { //Menu de frutas
 		ClasseCarrinho carrinho = new ClasseCarrinho();
-		int opc = -1; //coloquei -1, pq o 9 e o 0 estão sendo usado
+		int opc = -1; 
 		int i = 0;
 		while(opc != 0) {
 			opc = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a fruta e na próxima janela sua quantidade ou digite 0 para terminar."
@@ -121,7 +117,7 @@ public class ClasseMetodos {
 					+ "\n 10 - Limão: valor = R$ 3.49 Kg"
                                         + "\n\n 0 - Voltar"));
 				switch (opc) {
-				case 1:case 2:case 3:case 4:case 5:case 6:case 7:case 8:case 9:case 10:
+				case 1:case 2:case 3:case 4:case 5:case 6:case 7:case 8:case 9:case 10: //Em todas as escolhas é chamado a classe de registro do pedido.
 					lista = carrinho.SomarValoresFrutas(lista, opc, i);
 					break;
 				case 0:	somaParcial(lista); //vai mostrando parcialmente o total após o término de seleção.
@@ -135,11 +131,10 @@ public class ClasseMetodos {
 		return lista;
 	}
 
-	private CarrinhoCompras[] CatalogoLeguVerPronto(CarrinhoCompras[] lista) {
-//Fazer parecido com as opções das frutas instancia mais uma Classe carrinhos
-		
+	private CarrinhoCompras[] CatalogoLeguVerPronto(CarrinhoCompras[] lista) { //Menu de legumes e verduras
+
 		ClasseCarrinho carrinho = new ClasseCarrinho();
-		int opc = -1; //coloquei -1, pq o 9 e o 0 estão sendo usado
+		int opc = -1; 
 		int i = 10;
 		while(opc != 0) {
 			opc = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o legume ou verdura e a sua quantidade ou 0 para terminar"
@@ -155,11 +150,11 @@ public class ClasseMetodos {
 					+ "\n 10 - Repolho: valor = R$ 4.50 Kg"
                                         + "\n\n 0 - Voltar."));
 				switch (opc) {
-				case 1:case 2:case 3:case 4:case 5:case 6:case 7:case 8:case 9:case 10:
+				case 1:case 2:case 3:case 4:case 5:case 6:case 7:case 8:case 9:case 10: //Em todas as escolhas é chamado a classe de registro do pedido.
 					lista = carrinho.SomarValoresverLeg(lista, opc, i);
 					break;
 				case 0:
-					somaParcial(lista);
+					somaParcial(lista); //vai mostrando parcialmente o total após o término de seleção.
 					break;
 				default:
 					JOptionPane.showMessageDialog(null, "Opção invalida");
@@ -170,7 +165,7 @@ public class ClasseMetodos {
 		return lista;
 	}
 
-	private double somaParcial(CarrinhoCompras[] lista) {
+	private double somaParcial(CarrinhoCompras[] lista) { //soma parcial, mostra o total da compra da para melhorar.
 		
             double contador = 0;
             DecimalFormat fmt = new DecimalFormat();
@@ -186,83 +181,97 @@ public class ClasseMetodos {
 
 	}
 
-        private double escolhaPagamento(double total) throws InterruptedException
+        private double escolhaPagamento(double total) throws InterruptedException //Escolhe a forma de pagamento
         {
             int opc = 0;
             int pag = 0;
             double dinheiro = 0;
             DecimalFormat fmt = new DecimalFormat();
             fmt.applyPattern("R$ #,##0.00");
-            while(opc!=9)
-            {   
-                opc = Integer.parseInt(JOptionPane.showInputDialog("Digite a opção desejada: \n 1- Cartão de débito \n 2 - Cartão de crédito \n 3 - Dinheiro (5% de desconto) \n 9 - Para finalizar."));
-                switch(opc)
-                {
-
-                    case 1: pag = Integer.parseInt(JOptionPane.showInputDialog("Opção débito. - Total: " +fmt.format(total) +" \n Confirmar? \n 1- Sim \n 2 - Não")); //arrumar opções e carregar desconto
-                            if(pag==1)
-                            {
-                                opc= 9;
-                                RealizandoPagamento();
-                                JOptionPane.showMessageDialog(null, "Pagamento realizado com sucesso");
-                            }
-                            else
-                            {
-                                opc = 0;
-                            }
-                        break;
-                    case 2: pag = Integer.parseInt(JOptionPane.showInputDialog("Opção Crédito. - Total: " +fmt.format(total) +" \n Confirmar? \n 1- Sim \n 2 - Não")); //arrumar opções e carregar desconto
-                            if(pag==1)
-                            {
-                                opc= 9;
-                                RealizandoPagamento();
-                                JOptionPane.showMessageDialog(null, "Pagamento realizado com sucesso");
-                            }
-                            else
-                            {
-                                opc = 0;
-                            }
-                        break;
-                    case 3: 
-                    while(dinheiro<(total*0.95))
+            double frete = 10;
+            double totfrete;
+            System.out.println("Para compras acima de R$100 o frete é grátis, aproveite!!");
+            if(total >=100) //se a compra for maior que R$100 o frete é grátis
+            {
+                frete = 0;
+            }
+            totfrete = total + frete;
+           
+                while(opc!=9)
+                {   
+                    opc = Integer.parseInt(JOptionPane.showInputDialog("Digite a opção desejada: \n 1- Cartão de débito \n "
+                            + "2 - Cartão de crédito \n 3 - Dinheiro (5% de desconto) \n 9 - Para finalizar.")); //opções de pagamento
+                    switch(opc)
                     {
-                        dinheiro = Integer.parseInt(JOptionPane.showInputDialog("Opção Dinheiro: \nTotal " +fmt.format(total)+ " - Com Desconto: " +fmt.format(total*0.95)+" \nDigite o valor entregue para o calculo do troco: "));
-                        if(dinheiro<(total*0.95))
-                        {
-                            JOptionPane.showMessageDialog(null, "Valor inserido menor que o valor da compra, favor adicionar mais dinheiro.");
-                        }
-                    }
-                    
-                    pag = Integer.parseInt(JOptionPane.showInputDialog("Opção Dinheiro. - \nTotal: " +fmt.format(total)+  " \nCom Desconto: :" +fmt.format(0.95*total)+ "\nValor pago: " 
-                                                            +fmt.format(dinheiro)+"\nTroco: " +fmt.format(dinheiro-(0.95*total)) + "\nConfirmar? \n1- Sim \n 2- Não"));
-                            if(pag==1)
-                            {
+
+                        case 1: pag = Integer.parseInt(JOptionPane.showInputDialog("Opção débito.\n - Total: " +fmt.format(total) +"\n - Frete: "+fmt.format(frete)+ "\n - Total + Frete: " 
+                                +fmt.format(totfrete) +" \n Confirmar? \n 1- Sim \n 2 - Não")); 
+                                if(pag==1) // Se confirmar realiza o pagamento, senão volta pro menu anterior
+                                {
                                 opc= 9;
                                 RealizandoPagamento();
                                 JOptionPane.showMessageDialog(null, "Pagamento realizado com sucesso");
-                                total = total*0.95;
-                            }
-                            else
-                            {
+                                }
+                                else
+                                {
                                 opc = 0;
+                                }
+                            break;
+                            
+                        case 2: pag = Integer.parseInt(JOptionPane.showInputDialog("Opção Crédito. - Total: " +fmt.format(total) +"\n - Frete: "+fmt.format(frete)+ "\n - Total + Frete: " 
+                                +fmt.format(totfrete) +" \n Confirmar? \n 1- Sim \n 2 - Não"));
+                                if(pag==1) 
+                                {
+                                    opc= 9;
+                                    RealizandoPagamento();
+                                    JOptionPane.showMessageDialog(null, "Pagamento realizado com sucesso");
+                                }
+                                else
+                                {
+                                    opc = 0;
+                                }
+                            break;
+                            
+                        case 3: 
+                            while(dinheiro<((total+frete)*0.95)) //Desconto, se o valor inserido no pagamento for menor ele repetirá o processo.
+                            {
+                                dinheiro = Double.parseDouble(JOptionPane.showInputDialog("Opção Dinheiro: \nTotal: " +fmt.format(total)+ " \n Frete: " +fmt.format(frete)
+                                        + "\n Total + Frete: "+ fmt.format(totfrete) +"\n Com Desconto: " +fmt.format(totfrete*0.95)+" \nDigite o valor entregue para o calculo do troco: "));
+                                if(dinheiro<(totfrete*0.95))
+                                {
+                                    JOptionPane.showMessageDialog(null, "Valor inserido menor que o valor da compra, favor adicionar mais dinheiro.");
+                                }
                             }
-                          break;
-                    case 9: RealizandoPagamento();
-                        break;
+                            pag = Integer.parseInt(JOptionPane.showInputDialog("Opção Dinheiro. - \nTotal: " +fmt.format(totfrete)+  " \nCom Desconto: :" +fmt.format(0.95*totfrete)+ "\nValor pago: " 
+                                                                    +fmt.format(dinheiro)+"\nTroco: " +fmt.format(dinheiro-(0.95*totfrete)) + "\nConfirmar? \n1- Sim \n 2- Não"));
+                                    if(pag==1)
+                                    {
+                                        opc= 9;
+                                        RealizandoPagamento();
+                                        JOptionPane.showMessageDialog(null, "Pagamento realizado com sucesso");
+                                        total = totfrete*0.95;
+                                    }
+                                    else
+                                    {
+                                        opc = 0;
+                                    }
+                              break;
+                        case 9: RealizandoPagamento();
+                            break;
                         
                     default: JOptionPane.showMessageDialog(null, "Opção inválida.");
+                    }
                 }
-            }
             
             return total;
         }
 
 	private void GerarNotaFiscal(CarrinhoCompras[] lista, double total, Cliente[] cadasCliente) throws IOException {
-//Cria nota fiscal em um arquivo que abre no bloco de notas no diretorio C:\\TEMP\\NotaFiscal se não ouver uma pasta dessas ele vai criar autmaticamente
+        //Cria nota fiscal em um arquivo que abre no bloco de notas no diretorio C:\\TEMP\\NotaFiscal se não ouver uma pasta dessas ele vai criar automaticamente
 		File dir = new File("C:\\TEMP\\NotaFiscal");
 		File arq = new File(dir, "NotaFiscal.txt");
                 int i = -1;
-                do{
+                do{ //escolhe um cliente do BD.
                     i = Integer.parseInt(JOptionPane.showInputDialog("Digite o número correspondente ao Cliente cadastrado: \n" 
                                     + "\n 1 - " + cadasCliente[0].nome + " // Endereço: " + cadasCliente[0].endereco
                                     + "\n 2 - " + cadasCliente[1].nome + " // Endereço: " + cadasCliente[1].endereco
@@ -298,55 +307,67 @@ public class ClasseMetodos {
 	}
         
         private String preencheNota(CarrinhoCompras[] lista, double total, Cliente[] cadasCliente, int j) throws IOException {
-        StringBuffer buffer = new StringBuffer();
-        String fileName = "NotaFiscal.txt";
-        BufferedWriter gravar = new BufferedWriter(new FileWriter(fileName)); //para gravar em um arquivo que aparece a direita da tela
-        String linha = "";
-        linha = ("Foi um Prazer Ter você como nosso Cliente");
-        buffer.append(linha + "\n\r"); //vai adicionar as informações  no arquivo.txt
-        gravar.write(linha );
-		gravar.newLine();
-        linha = ("Cliente: " + cadasCliente[j-1].nome +"    Endereço: " + cadasCliente[j-1].endereco);
-        buffer.append(linha + "\n\r");
-        gravar.write(linha );
-		gravar.newLine();
-        
-        double auxTotal = 0;
-        DecimalFormat fmt = new DecimalFormat();
-        fmt.applyPattern("R$ #,##0.00");
-                
-        for (int i = 0; i < lista.length; i++) 
-        {
-        	if(lista[i].fruta != null) { //Para remover as posiçoes que não foram cadastrado frutas
-        		linha =  (lista[i].fruta+ " - Quantidade:" + lista[i].quantidade + " - Valor unitario:  " + fmt.format(lista[i].preco)+" - Total: " + fmt.format(lista[i].total));
-        		buffer.append(linha + "\n\r");
-        		 gravar.write(linha );
-        		 gravar.newLine();
-        	}
-                auxTotal = lista[i].total + auxTotal;		
-	}
-        
+            
+            StringBuffer buffer = new StringBuffer();
+            String fileName = "NotaFiscal.txt";
+            BufferedWriter gravar = new BufferedWriter(new FileWriter(fileName)); //para gravar em um arquivo que aparece a direita da tela
+            String linha = "";
+            linha = ("Foi um Prazer Ter você como nosso Cliente");
+            buffer.append(linha + "\n\r"); //vai adicionar as informações  no arquivo.txt
+            gravar.write(linha );
+                    gravar.newLine();
+            linha = ("Cliente: " + cadasCliente[j-1].nome +"    Endereço: " + cadasCliente[j-1].endereco);
+            buffer.append(linha + "\n\r");
+            gravar.write(linha );
+                    gravar.newLine();
 
-        if(auxTotal == total)
-        {
-            linha = ("Total da compra: " +fmt.format(total));
-        }
-        else
-        {
-            linha = ("Total da compra: " +fmt.format(auxTotal) + " // Desconto: " +fmt.format(auxTotal-total) + " // Valor Pago: " + fmt.format(total));
-        }
-        
-        
-		buffer.append(linha + "\n\r");
-		 gravar.write(linha );
-		 gravar.newLine();
-         gravar.close();
-        	
-		return buffer.toString();
+            double auxTotal = 0;
+            DecimalFormat fmt = new DecimalFormat();
+            fmt.applyPattern("R$ #,##0.00");
+
+            for (int i = 0; i < lista.length; i++) 
+            {
+                    if(lista[i].fruta != null) { //Para remover as posiçoes que não foram cadastrado frutas
+                            linha =  (lista[i].fruta+ " - Quantidade:" + lista[i].quantidade + " - Valor unitario:  " + fmt.format(lista[i].preco)+" - Total: " + fmt.format(lista[i].total));
+                            buffer.append(linha + "\n\r");
+                             gravar.write(linha );
+                             gravar.newLine();
+                    }
+                    auxTotal = lista[i].total + auxTotal;		
+            }
+            if (auxTotal<100) // Se for menor que R$100 adiciono o frete e imprimo na nota fiscal o frete.
+            {
+                auxTotal = auxTotal + 10;
+                if(auxTotal == total)
+                {
+                    linha = ("Total da compra + Frete (R$10): " +fmt.format(total));
+                }
+                else
+                {
+                    linha = ("Total da compra + Frete (R$10): " +fmt.format(auxTotal) + " // Desconto: " +fmt.format(auxTotal-total) + " // Valor Pago: " + fmt.format(total));
+                }
+            }
+            else //Se for maior que R$100 a impressão será sem o frete
+            {
+                if(auxTotal == total)
+                {
+                    linha = ("Total da compra: " +fmt.format(total));
+                }
+                else
+                {
+                    linha = ("Total da compra: " +fmt.format(auxTotal) + " // Desconto: " +fmt.format(auxTotal-total) + " // Valor Pago: " + fmt.format(total));
+                }
+            }
+            buffer.append(linha + "\n\r");
+            gravar.write(linha );
+            gravar.newLine();
+            gravar.close();
+
+            return buffer.toString();
 	}
         
-        // TO DO
-        public void RealizandoPagamento() throws InterruptedException
+        
+        public void RealizandoPagamento() throws InterruptedException //Apenas uma interação na hora de realizar o pagamento.
         {
             Thread thrpag;
             thrpag = Thread.currentThread();

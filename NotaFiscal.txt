@@ -1,4 +1,4 @@
 Foi um Prazer Ter você como nosso Cliente
-Cliente: ricardo    Endereço: ddd
-Mandioquinha - Quantidade:20.0 - Valor unitario:  R$ 6,00 - Total: R$ 120,00
-Total da compra: R$ 120,00
+Cliente: Não Preenchido    Endereço: Não Preenchido
+Banana - Quantidade:1.0 - Valor unitario:  R$ 3,99 - Total: R$ 3,99
+Total da compra + Frete (R$10): R$ 13,99 // Desconto: R$ 10,00 // Valor Pago: R$ 3,99
