@@ -1,8 +1,6 @@
 Foi um Prazer Ter você como nosso Cliente
-Cliente: ricardo    Endereço: vitifolia
-Banana - Quantidade:5.0 - Valor unitario:  R$ 3,99 - Total: R$ 19,95
-Maça - Quantidade:2.0 - Valor unitario:  R$ 0,50 - Total: R$ 1,00
-Melancia - Quantidade:3.0 - Valor unitario:  R$ 10,00 - Total: R$ 30,00
-Batata Doce - Quantidade:8.0 - Valor unitario:  R$ 3,00 - Total: R$ 24,00
-Couve - Quantidade:10.0 - Valor unitario:  R$ 5,50 - Total: R$ 55,00
-Total da compra: R$ 129,95 // Desconto: R$ 6,50 // Valor Pago: R$ 123,45
+Cliente: Não Preenchido    Endereço: Não Preenchido
+Banana - Quantidade:10.0 - Valor unitario:  R$ 3,99 - Total: R$ 39,90
+
+
+Total da compra + Frete (R$10): R$ 49,90 // Desconto: R$ 2,50 // Valor Pago: R$ 47,41

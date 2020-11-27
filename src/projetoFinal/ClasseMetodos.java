@@ -67,8 +67,12 @@ public class ClasseMetodos {
 				}
 				break;
 			case 4: // Gera o arquivo físico com os dados da compra
-				GerarNotaFiscal(lista, total, cadasCliente); // Inseri todos os dados de vendas em um arquivo.txt para
-																// poder imprimir e entregar para o cliente
+				if (pagou == true) {
+					GerarNotaFiscal(lista, total, cadasCliente); // Inseri todos os dados de vendas em um arquivo.txt
+																	// para poder imprimir e entregar para o cliente
+				} else {
+					JOptionPane.showMessageDialog(null, "Pagamento não foi realizado");
+				}
 				break;
 
 			case 0:
@@ -366,17 +370,17 @@ public class ClasseMetodos {
 		{
 			auxTotal = auxTotal + 10;
 			if (auxTotal == total) {
-				linha = ("Total da compra + Frete (R$10): " + fmt.format(total));
+				linha = ("\n\n\nTotal da compra + Frete (R$10): " + fmt.format(total));
 			} else {
-				linha = ("Total da compra + Frete (R$10): " + fmt.format(auxTotal) + " // Desconto: "
+				linha = ("\n\nTotal da compra + Frete (R$10): " + fmt.format(auxTotal) + " // Desconto: "
 						+ fmt.format(auxTotal - total) + " // Valor Pago: " + fmt.format(total));
 			}
 		} else // Se for maior que R$100 a impressão será sem o frete
 		{
 			if (auxTotal == total) {
-				linha = ("Total da compra: " + fmt.format(total));
+				linha = ("\n\nTotal da compra: " + fmt.format(total));
 			} else {
-				linha = ("Total da compra: " + fmt.format(auxTotal) + " // Desconto: " + fmt.format(auxTotal - total)
+				linha = ("\n\nTotal da compra: " + fmt.format(auxTotal) + " // Desconto: " + fmt.format(auxTotal - total)
 						+ " // Valor Pago: " + fmt.format(total));
 			}
 		}

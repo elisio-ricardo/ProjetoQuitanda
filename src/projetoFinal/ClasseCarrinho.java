@@ -44,7 +44,7 @@ public class ClasseCarrinho {
 			lista[i].fruta = "Laranja";
 			lista[i].preco = 4.00;
 
-			Quantidade(lista, i);
+			Quantidade(lista, i); // Metodo para as regras de seleção de quantidade
 
 			lista[i].total = lista[i].preco * lista[i].quantidade;
 			System.out.println(
