@@ -1,5 +1,11 @@
-package projetoFinal;
-
+package projetoQuitanda;
+/*
+ * Projeto desenvolvido para a materia de Logica de programação
+ * Onde criamos uma aplicação para um mercadinho ou quitanda
+ * Autores
+ * Elisio Ricardo Canuto
+ * Fabio Silva
+ */
 import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
