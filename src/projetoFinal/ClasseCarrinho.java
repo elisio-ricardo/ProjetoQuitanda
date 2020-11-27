@@ -1,4 +1,5 @@
 package projetoFinal;
+
 import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
@@ -16,69 +17,22 @@ public class ClasseCarrinho {
 		switch (opc) {
 		case 1:
 			i = 0;
-                        double verificador = 0;
-                        lista[i].fruta = "Banana";
+			lista[i].fruta = "Banana";
 			lista[i].preco = 3.99;
-                        
-			do {
-				double quantidade = 0;
-                                verificador = 0;
-				if (lista[i].quantidade == 0) {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Você possui: " +lista[i].quantidade +" " +lista[i].fruta+" \nDigite um valor maior que zero para acrescentar"
-                                                        + " ou zero para cancelar a adição deste produto");
-                                                verificador = -1;
-					} else {
-						lista[i].quantidade = quantidade;
-					}
-				} else {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade + lista[i].quantidade >= 0) {
-						lista[i].quantidade = quantidade + lista[i].quantidade;
-					} else {
-						JOptionPane.showMessageDialog(null, "Impossível diminuir mais do que possui. Favor verificar\n"
-                                                        + "Você possui: " +lista[i].quantidade +" " +lista[i].fruta);
-                                                verificador = -1;
-					}
-				}
-			} while (verificador < 0);
 
+			Quantidade(lista, i); // Metodo para as regras de seleção de quantidade
 
 			lista[i].total = lista[i].preco * lista[i].quantidade;
-			System.out.println("Descrição: " + lista[i].fruta + " Quantidade : " + lista[i].quantidade + " // Valor unitário: "
+			System.out.println(
+					"Descrição: " + lista[i].fruta + " Quantidade : " + lista[i].quantidade + " // Valor unitário: "
 							+ fmt.format(lista[i].preco) + " // Valor total: " + fmt.format(lista[i].total));
 			break;
 		case 2:
 			i = 1;
-                        verificador = 0;
-                        lista[i].fruta = "Maça";
+			lista[i].fruta = "Maça";
 			lista[i].preco = 0.50;
-                        
-			do {
-				double quantidade = 0;
-                                verificador = 0;
-				if (lista[i].quantidade == 0) {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Você possui: " +lista[i].quantidade +" " +lista[i].fruta+" \nDigite um valor maior que zero para acrescentar"
-                                                        + " ou zero para cancelar a adição deste produto");
-                                                verificador = -1;
-					} else {
-						lista[i].quantidade = quantidade;
-					}
-				} else {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade + lista[i].quantidade >= 0) {
-						lista[i].quantidade = quantidade + lista[i].quantidade;
-					} else {
-						JOptionPane.showMessageDialog(null, "Impossível diminuir mais do que possui. Favor verificar\n"
-                                                        + "Você possui: " +lista[i].quantidade +" " +lista[i].fruta);
-                                                verificador = -1;
-					}
-				}
-			} while (verificador < 0);
-                        
+
+			Quantidade(lista, i); // Metodo para as regras de seleção de quantidade
 
 			lista[i].total = lista[i].preco * lista[i].quantidade;
 			System.out.println(
@@ -87,33 +41,10 @@ public class ClasseCarrinho {
 			break;
 		case 3:
 			i = 2;
-                        verificador = 0;
-                        lista[i].fruta = "Laranja";
+			lista[i].fruta = "Laranja";
 			lista[i].preco = 4.00;
 
-			do {
-				double quantidade = 0;
-                                verificador = 0;
-				if (lista[i].quantidade == 0) {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Você possui: " +lista[i].quantidade +" " +lista[i].fruta+" \nDigite um valor maior que zero para acrescentar"
-                                                        + " ou zero para cancelar a adição deste produto");
-                                                verificador = -1;
-					} else {
-						lista[i].quantidade = quantidade;
-					}
-				} else {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade + lista[i].quantidade >= 0) {
-						lista[i].quantidade = quantidade + lista[i].quantidade;
-					} else {
-						JOptionPane.showMessageDialog(null, "Impossível diminuir mais do que possui. Favor verificar\n"
-                                                        + "Você possui: " +lista[i].quantidade +" " +lista[i].fruta);
-                                                verificador = -1;
-					}
-				}
-			} while (verificador < 0);
+			Quantidade(lista, i);
 
 			lista[i].total = lista[i].preco * lista[i].quantidade;
 			System.out.println(
@@ -124,30 +55,8 @@ public class ClasseCarrinho {
 			i = 3;
 			lista[i].fruta = "Abacaxi";
 			lista[i].preco = 5.00;
-                        verificador = 0;
-			do {
-				double quantidade = 0;
-                                verificador = 0;
-				if (lista[i].quantidade == 0) {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Você possui: " +lista[i].quantidade +" " +lista[i].fruta+" \nDigite um valor maior que zero para acrescentar"
-                                                        + " ou zero para cancelar a adição deste produto");
-                                                verificador = -1;
-					} else {
-						lista[i].quantidade = quantidade;
-					}
-				} else {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade + lista[i].quantidade >= 0) {
-						lista[i].quantidade = quantidade + lista[i].quantidade;
-					} else {
-						JOptionPane.showMessageDialog(null, "Impossível diminuir mais do que possui. Favor verificar\n"
-                                                        + "Você possui: " +lista[i].quantidade +" " +lista[i].fruta);
-                                                verificador = -1;
-					}
-				}
-			} while (verificador < 0);
+
+			Quantidade(lista, i); // Metodo para as regras de seleção de quantidade
 
 			lista[i].total = lista[i].preco * lista[i].quantidade;
 			System.out.println(
@@ -158,32 +67,10 @@ public class ClasseCarrinho {
 			i = 4;
 			lista[i].fruta = "Mamão";
 			lista[i].preco = 2.00;
-                        verificador = 0;
-			do {
-				double quantidade = 0;
-                                verificador = 0;
-				if (lista[i].quantidade == 0) {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Você possui: " +lista[i].quantidade +" " +lista[i].fruta+" \nDigite um valor maior que zero para acrescentar"
-                                                        + " ou zero para cancelar a adição deste produto");
-                                                verificador = -1;
-					} else {
-						lista[i].quantidade = quantidade;
-					}
-				} else {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade + lista[i].quantidade >= 0) {
-						lista[i].quantidade = quantidade + lista[i].quantidade;
-					} else {
-						JOptionPane.showMessageDialog(null, "Impossível diminuir mais do que possui. Favor verificar\n"
-                                                        + "Você possui: " +lista[i].quantidade +" " +lista[i].fruta);
-                                                verificador = -1;
-					}
-				}
-			} while (verificador < 0);
 
-                        lista[i].total = lista[i].preco * lista[i].quantidade;
+			Quantidade(lista, i); // Metodo para as regras de seleção de quantidade
+
+			lista[i].total = lista[i].preco * lista[i].quantidade;
 			System.out.println(
 					"Descrição: " + lista[i].fruta + " Quantidade : " + lista[i].quantidade + " // Valor unitário: "
 							+ fmt.format(lista[i].preco) + " // Valor total: " + fmt.format(lista[i].total));
@@ -192,30 +79,8 @@ public class ClasseCarrinho {
 			i = 5;
 			lista[i].fruta = "Morango";
 			lista[i].preco = 5.00;
-                        verificador = 0;
-			do {
-				double quantidade = 0;
-                                verificador = 0;
-				if (lista[i].quantidade == 0) {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Você possui: " +lista[i].quantidade +" " +lista[i].fruta+" \nDigite um valor maior que zero para acrescentar"
-                                                        + " ou zero para cancelar a adição deste produto");
-                                                verificador = -1;
-					} else {
-						lista[i].quantidade = quantidade;
-					}
-				} else {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade + lista[i].quantidade >= 0) {
-						lista[i].quantidade = quantidade + lista[i].quantidade;
-					} else {
-						JOptionPane.showMessageDialog(null, "Impossível diminuir mais do que possui. Favor verificar\n"
-                                                        + "Você possui: " +lista[i].quantidade +" " +lista[i].fruta);
-                                                verificador = -1;
-					}
-				}
-			} while (verificador < 0);
+
+			Quantidade(lista, i); // Metodo para as regras de seleção de quantidade
 
 			lista[i].total = lista[i].preco * lista[i].quantidade;
 			System.out.println(
@@ -226,30 +91,8 @@ public class ClasseCarrinho {
 			i = 6;
 			lista[i].fruta = "Melão";
 			lista[i].preco = 6.00;
-                        verificador = 0;
-			do {
-				double quantidade = 0;
-                                verificador = 0;
-				if (lista[i].quantidade == 0) {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Você possui: " +lista[i].quantidade +" " +lista[i].fruta+" \nDigite um valor maior que zero para acrescentar"
-                                                        + " ou zero para cancelar a adição deste produto");
-                                                verificador = -1;
-					} else {
-						lista[i].quantidade = quantidade;
-					}
-				} else {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade + lista[i].quantidade >= 0) {
-						lista[i].quantidade = quantidade + lista[i].quantidade;
-					} else {
-						JOptionPane.showMessageDialog(null, "Impossível diminuir mais do que possui. Favor verificar\n"
-                                                        + "Você possui: " +lista[i].quantidade +" " +lista[i].fruta);
-                                                verificador = -1;
-					}
-				}
-			} while (verificador < 0);
+
+			Quantidade(lista, i); // Metodo para as regras de seleção de quantidade
 
 			lista[i].total = lista[i].preco * lista[i].quantidade;
 			System.out.println(
@@ -260,30 +103,8 @@ public class ClasseCarrinho {
 			i = 7;
 			lista[i].fruta = "Melancia";
 			lista[i].preco = 10;
-                        verificador = 0;
-			do {
-				double quantidade = 0;
-                                verificador = 0;
-				if (lista[i].quantidade == 0) {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Você possui: " +lista[i].quantidade +" " +lista[i].fruta+" \nDigite um valor maior que zero para acrescentar"
-                                                        + " ou zero para cancelar a adição deste produto");
-                                                verificador = -1;
-					} else {
-						lista[i].quantidade = quantidade;
-					}
-				} else {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade + lista[i].quantidade >= 0) {
-						lista[i].quantidade = quantidade + lista[i].quantidade;
-					} else {
-						JOptionPane.showMessageDialog(null, "Impossível diminuir mais do que possui. Favor verificar\n"
-                                                        + "Você possui: " +lista[i].quantidade +" " +lista[i].fruta);
-                                                verificador = -1;
-					}
-				}
-			} while (verificador < 0);
+
+			Quantidade(lista, i); // Metodo para as regras de seleção de quantidade
 
 			lista[i].total = lista[i].preco * lista[i].quantidade;
 			System.out.println(
@@ -294,30 +115,8 @@ public class ClasseCarrinho {
 			i = 8;
 			lista[i].fruta = "Manga";
 			lista[i].preco = 2.00;
-                        verificador = 0;
-			do {
-				double quantidade = 0;
-                                verificador = 0;
-				if (lista[i].quantidade == 0) {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Você possui: " +lista[i].quantidade +" " +lista[i].fruta+" \nDigite um valor maior que zero para acrescentar"
-                                                        + " ou zero para cancelar a adição deste produto");
-                                                verificador = -1;
-					} else {
-						lista[i].quantidade = quantidade;
-					}
-				} else {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade + lista[i].quantidade >= 0) {
-						lista[i].quantidade = quantidade + lista[i].quantidade;
-					} else {
-						JOptionPane.showMessageDialog(null, "Impossível diminuir mais do que possui. Favor verificar\n"
-                                                        + "Você possui: " +lista[i].quantidade +" " +lista[i].fruta);
-                                                verificador = -1;
-					}
-				}
-			} while (verificador < 0);
+
+			Quantidade(lista, i); // Metodo para as regras de seleção de quantidade
 
 			lista[i].total = lista[i].preco * lista[i].quantidade;
 			System.out.println(
@@ -328,30 +127,8 @@ public class ClasseCarrinho {
 			i = 9;
 			lista[i].fruta = "Limão";
 			lista[i].preco = 3.49;
-                        verificador = 0;
-			do {
-				double quantidade = 0;
-                                verificador = 0;
-				if (lista[i].quantidade == 0) {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Você possui: " +lista[i].quantidade +" " +lista[i].fruta+" \nDigite um valor maior que zero para acrescentar"
-                                                        + " ou zero para cancelar a adição deste produto");
-                                                verificador = -1;
-					} else {
-						lista[i].quantidade = quantidade;
-					}
-				} else {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade + lista[i].quantidade >= 0) {
-						lista[i].quantidade = quantidade + lista[i].quantidade;
-					} else {
-						JOptionPane.showMessageDialog(null, "Impossível diminuir mais do que possui. Favor verificar\n"
-                                                        + "Você possui: " +lista[i].quantidade +" " +lista[i].fruta);
-                                                verificador = -1;
-					}
-				}
-			} while (verificador < 0);
+
+			Quantidade(lista, i); // Metodo para as regras de seleção de quantidade
 
 			lista[i].total = lista[i].preco * lista[i].quantidade;
 			System.out.println(
@@ -366,7 +143,6 @@ public class ClasseCarrinho {
 		return lista;
 	}
 
-
 	public CarrinhoCompras[] SomarValoresverLeg(CarrinhoCompras[] lista, int opc, int i) {
 		// Criei essa classe para a classe metodos não ficar com tanta informação
 
@@ -375,32 +151,10 @@ public class ClasseCarrinho {
 		switch (opc) {
 		case 1:
 			i = 10;
-                        lista[i].fruta = "Alface Crespa";
+			lista[i].fruta = "Alface Crespa";
 			lista[i].preco = 4.99;
-			double verificador = 0;
-			do {
-				double quantidade = 0;
-                                verificador = 0;
-				if (lista[i].quantidade == 0) {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Você possui: " +lista[i].quantidade +" " +lista[i].fruta+" \nDigite um valor maior que zero para acrescentar"
-                                                        + " ou zero para cancelar a adição deste produto");
-                                                verificador = -1;
-					} else {
-						lista[i].quantidade = quantidade;
-					}
-				} else {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade + lista[i].quantidade >= 0) {
-						lista[i].quantidade = quantidade + lista[i].quantidade;
-					} else {
-						JOptionPane.showMessageDialog(null, "Impossível diminuir mais do que possui. Favor verificar\n"
-                                                        + "Você possui: " +lista[i].quantidade +" " +lista[i].fruta);
-                                                verificador = -1;
-					}
-				}
-			} while (verificador < 0);
+
+			Quantidade(lista, i); // Metodo para as regras de seleção de quantidade
 
 			lista[i].total = lista[i].preco * lista[i].quantidade;
 			System.out.println(
@@ -411,31 +165,8 @@ public class ClasseCarrinho {
 			i = 11;
 			lista[i].fruta = "Alface Americana";
 			lista[i].preco = 5.99;
-                        verificador = 0;
-			do {
-				double quantidade = 0;
-                                verificador = 0;
-				if (lista[i].quantidade == 0) {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Você possui: " +lista[i].quantidade +" " +lista[i].fruta+" \nDigite um valor maior que zero para acrescentar"
-                                                        + " ou zero para cancelar a adição deste produto");
-                                                verificador = -1;
-					} else {
-						lista[i].quantidade = quantidade;
-					}
-				} else {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade + lista[i].quantidade >= 0) {
-						lista[i].quantidade = quantidade + lista[i].quantidade;
-					} else {
-						JOptionPane.showMessageDialog(null, "Impossível diminuir mais do que possui. Favor verificar\n"
-                                                        + "Você possui: " +lista[i].quantidade +" " +lista[i].fruta);
-                                                verificador = -1;
-					}
-				}
-			} while (verificador < 0);
-                        
+
+			Quantidade(lista, i); // Metodo para as regras de seleção de quantidade
 
 			lista[i].total = lista[i].preco * lista[i].quantidade;
 			System.out.println(
@@ -446,32 +177,8 @@ public class ClasseCarrinho {
 			i = 12;
 			lista[i].fruta = "Brócolis";
 			lista[i].preco = 6.00;
-			verificador = 0;
-                        
-			do {
-				double quantidade = 0;
-                                verificador = 0;
-				if (lista[i].quantidade == 0) {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Você possui: " +lista[i].quantidade +" " +lista[i].fruta+" \nDigite um valor maior que zero para acrescentar"
-                                                        + " ou zero para cancelar a adição deste produto");
-                                                verificador = -1;
-					} else {
-						lista[i].quantidade = quantidade;
-					}
-				} else {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade + lista[i].quantidade >= 0) {
-						lista[i].quantidade = quantidade + lista[i].quantidade;
-					} else {
-						JOptionPane.showMessageDialog(null, "Impossível diminuir mais do que possui. Favor verificar\n"
-                                                        + "Você possui: " +lista[i].quantidade +" " +lista[i].fruta);
-                                                verificador = -1;
-					}
-				}
-			} while (verificador < 0);
-                        
+
+			Quantidade(lista, i); // Metodo para as regras de seleção de quantidade
 
 			lista[i].total = lista[i].preco * lista[i].quantidade;
 			System.out.println(
@@ -482,31 +189,8 @@ public class ClasseCarrinho {
 			i = 13;
 			lista[i].fruta = "Beterraba";
 			lista[i].preco = 6.00;
-                        verificador = 0;
-			do {
-				double quantidade = 0;
-                                verificador = 0;
-				if (lista[i].quantidade == 0) {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Você possui: " +lista[i].quantidade +" " +lista[i].fruta+" \nDigite um valor maior que zero para acrescentar"
-                                                        + " ou zero para cancelar a adição deste produto");
-                                                verificador = -1;
-					} else {
-						lista[i].quantidade = quantidade;
-					}
-				} else {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade + lista[i].quantidade >= 0) {
-						lista[i].quantidade = quantidade + lista[i].quantidade;
-					} else {
-						JOptionPane.showMessageDialog(null, "Impossível diminuir mais do que possui. Favor verificar\n"
-                                                        + "Você possui: " +lista[i].quantidade +" " +lista[i].fruta);
-                                                verificador = -1;
-					}
-				}
-			} while (verificador < 0);
-                        
+
+			Quantidade(lista, i); // Metodo para as regras de seleção de quantidade
 
 			lista[i].total = lista[i].preco * lista[i].quantidade;
 			System.out.println(
@@ -517,31 +201,8 @@ public class ClasseCarrinho {
 			i = 14;
 			lista[i].fruta = "Batata Doce";
 			lista[i].preco = 3.00;
-                        verificador = 0;
-			do {
-				double quantidade = 0;
-                                verificador = 0;
-				if (lista[i].quantidade == 0) {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Você possui: " +lista[i].quantidade +" " +lista[i].fruta+" \nDigite um valor maior que zero para acrescentar"
-                                                        + " ou zero para cancelar a adição deste produto");
-                                                verificador = -1;
-					} else {
-						lista[i].quantidade = quantidade;
-					}
-				} else {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade + lista[i].quantidade >= 0) {
-						lista[i].quantidade = quantidade + lista[i].quantidade;
-					} else {
-						JOptionPane.showMessageDialog(null, "Impossível diminuir mais do que possui. Favor verificar\n"
-                                                        + "Você possui: " +lista[i].quantidade +" " +lista[i].fruta);
-                                                verificador = -1;
-					}
-				}
-			} while (verificador < 0);
-                        
+
+			Quantidade(lista, i); // Metodo para as regras de seleção de quantidade
 
 			lista[i].total = lista[i].preco * lista[i].quantidade;
 			System.out.println(
@@ -552,31 +213,8 @@ public class ClasseCarrinho {
 			i = 15;
 			lista[i].fruta = "Cebola";
 			lista[i].preco = 5.00;
-                        verificador = 0;
-			do {
-				double quantidade = 0;
-                                verificador = 0;
-				if (lista[i].quantidade == 0) {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Você possui: " +lista[i].quantidade +" " +lista[i].fruta+" \nDigite um valor maior que zero para acrescentar"
-                                                        + " ou zero para cancelar a adição deste produto");
-                                                verificador = -1;
-					} else {
-						lista[i].quantidade = quantidade;
-					}
-				} else {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade + lista[i].quantidade >= 0) {
-						lista[i].quantidade = quantidade + lista[i].quantidade;
-					} else {
-						JOptionPane.showMessageDialog(null, "Impossível diminuir mais do que possui. Favor verificar\n"
-                                                        + "Você possui: " +lista[i].quantidade +" " +lista[i].fruta);
-                                                verificador = -1;
-					}
-				}
-			} while (verificador < 0);
-                        
+
+			Quantidade(lista, i); // Metodo para as regras de seleção de quantidade
 
 			lista[i].total = lista[i].preco * lista[i].quantidade;
 			System.out.println(
@@ -587,31 +225,8 @@ public class ClasseCarrinho {
 			i = 16;
 			lista[i].fruta = "Cenoura";
 			lista[i].preco = 6.00;
-                        verificador = 0;
-			do {
-				double quantidade = 0;
-                                verificador = 0;
-				if (lista[i].quantidade == 0) {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Você possui: " +lista[i].quantidade +" " +lista[i].fruta+" \nDigite um valor maior que zero para acrescentar"
-                                                        + " ou zero para cancelar a adição deste produto");
-                                                verificador = -1;
-					} else {
-						lista[i].quantidade = quantidade;
-					}
-				} else {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade + lista[i].quantidade >= 0) {
-						lista[i].quantidade = quantidade + lista[i].quantidade;
-					} else {
-						JOptionPane.showMessageDialog(null, "Impossível diminuir mais do que possui. Favor verificar\n"
-                                                        + "Você possui: " +lista[i].quantidade +" " +lista[i].fruta);
-                                                verificador = -1;
-					}
-				}
-			} while (verificador < 0);
-                        
+
+			Quantidade(lista, i); // Metodo para as regras de seleção de quantidade
 
 			lista[i].total = lista[i].preco * lista[i].quantidade;
 			System.out.println(
@@ -622,31 +237,8 @@ public class ClasseCarrinho {
 			i = 17;
 			lista[i].fruta = "Couve";
 			lista[i].preco = 5.50;
-                        verificador = 0;
-			do {
-				double quantidade = 0;
-                                verificador = 0;
-				if (lista[i].quantidade == 0) {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Você possui: " +lista[i].quantidade +" " +lista[i].fruta+" \nDigite um valor maior que zero para acrescentar"
-                                                        + " ou zero para cancelar a adição deste produto");
-                                                verificador = -1;
-					} else {
-						lista[i].quantidade = quantidade;
-					}
-				} else {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade + lista[i].quantidade >= 0) {
-						lista[i].quantidade = quantidade + lista[i].quantidade;
-					} else {
-						JOptionPane.showMessageDialog(null, "Impossível diminuir mais do que possui. Favor verificar\n"
-                                                        + "Você possui: " +lista[i].quantidade +" " +lista[i].fruta);
-                                                verificador = -1;
-					}
-				}
-			} while (verificador < 0);
-                        
+
+			Quantidade(lista, i); // Metodo para as regras de seleção de quantidade
 
 			lista[i].total = lista[i].preco * lista[i].quantidade;
 			System.out.println(
@@ -657,31 +249,8 @@ public class ClasseCarrinho {
 			i = 18;
 			lista[i].fruta = "Mandioquinha";
 			lista[i].preco = 6.00;
-                        verificador = 0;
-			do {
-				double quantidade = 0;
-                                verificador = 0;
-				if (lista[i].quantidade == 0) {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Você possui: " +lista[i].quantidade +" " +lista[i].fruta+" \nDigite um valor maior que zero para acrescentar"
-                                                        + " ou zero para cancelar a adição deste produto");
-                                                verificador = -1;
-					} else {
-						lista[i].quantidade = quantidade;
-					}
-				} else {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade + lista[i].quantidade >= 0) {
-						lista[i].quantidade = quantidade + lista[i].quantidade;
-					} else {
-						JOptionPane.showMessageDialog(null, "Impossível diminuir mais do que possui. Favor verificar\n"
-                                                        + "Você possui: " +lista[i].quantidade +" " +lista[i].fruta);
-                                                verificador = -1;
-					}
-				}
-			} while (verificador < 0);
-                        
+
+			Quantidade(lista, i); // Metodo para as regras de seleção de quantidade
 
 			lista[i].total = lista[i].preco * lista[i].quantidade;
 			System.out.println(
@@ -692,31 +261,8 @@ public class ClasseCarrinho {
 			i = 19;
 			lista[i].fruta = "Repolho";
 			lista[i].preco = 4.50;
-                        verificador = 0;
-			do {
-				double quantidade = 0;
-                                verificador = 0;
-				if (lista[i].quantidade == 0) {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade < 0) {
-						JOptionPane.showMessageDialog(null, "Você possui: " +lista[i].quantidade +" " +lista[i].fruta+" \nDigite um valor maior que zero para acrescentar"
-                                                        + " ou zero para cancelar a adição deste produto");
-                                                verificador = -1;
-					} else {
-						lista[i].quantidade = quantidade;
-					}
-				} else {
-					quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
-					if (quantidade + lista[i].quantidade >= 0) {
-						lista[i].quantidade = quantidade + lista[i].quantidade;
-					} else {
-						JOptionPane.showMessageDialog(null, "Impossível diminuir mais do que possui. Favor verificar\n"
-                                                        + "Você possui: " +lista[i].quantidade +" " +lista[i].fruta);
-                                                verificador = -1;
-					}
-				}
-			} while (verificador < 0);
-                        
+
+			Quantidade(lista, i); // Metodo para as regras de seleção de quantidade
 
 			lista[i].total = lista[i].preco * lista[i].quantidade;
 			System.out.println(
@@ -728,5 +274,38 @@ public class ClasseCarrinho {
 			JOptionPane.showMessageDialog(null, "Opção invalida");
 		}
 		return lista;
+	}
+
+	private CarrinhoCompras[] Quantidade(CarrinhoCompras[] lista, int i) {
+
+		double verificador = 0;
+		do {
+			double quantidade = 0;
+			verificador = 0;
+			if (lista[i].quantidade == 0) {
+				quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
+				if (quantidade < 0) {
+					JOptionPane.showMessageDialog(null,
+							"Você possui: " + lista[i].quantidade + " " + lista[i].fruta
+									+ " \nDigite um valor maior que zero para acrescentar"
+									+ " ou zero para cancelar a adição deste produto");
+					verificador = -1;
+				} else {
+					lista[i].quantidade = quantidade;
+				}
+			} else {
+				quantidade = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a quantidade: "));
+				if (quantidade + lista[i].quantidade >= 0) {
+					lista[i].quantidade = quantidade + lista[i].quantidade;
+				} else {
+					JOptionPane.showMessageDialog(null, "Impossível diminuir mais do que possui. Favor verificar\n"
+							+ "Você possui: " + lista[i].quantidade + " " + lista[i].fruta);
+					verificador = -1;
+				}
+			}
+		} while (verificador < 0);
+
+		return lista;
+
 	}
 }
